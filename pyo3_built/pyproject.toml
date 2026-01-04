@@ -1,0 +1,16 @@
+[project]
+name = "builtpy"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+dependencies = [
+]
+
+[tool.setuptools]
+packages = ["builtpy"]
+
+[tool.setuptools.package-data]
+builtpy = ["./core/*.wasm", "./core/*.css"]
+
+[tool.uv]
+required-environments = ["sys_platform == 'win32' and platform_machine == 'AMD64'"]

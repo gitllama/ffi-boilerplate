@@ -1,0 +1,16 @@
+# cargo make build-wasm
+
+[tasks.build-wasm]
+description = "Build wasm and copy to dist"
+script = [
+  "cd corewasm",
+  "cargo build --target wasm32-unknown-unknown --release",
+  "copy target\\wasm32-unknown-unknown\\release\\corewasm.wasm ..\\builtpy\\core\\"
+]
+
+[tasks.build-pyo3]
+description = "Build pyo3 and copy to dist"
+script = [
+  "cd corepyo3",
+  "maturin build --release"
+]
